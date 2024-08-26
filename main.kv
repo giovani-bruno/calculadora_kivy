@@ -1,0 +1,69 @@
+BoxLayout:
+  orientation: 'vertical'
+
+  TextInput:
+    id: display
+    font_size: 32
+    readonly: True
+    halign: 'right'
+    valign: 'middle'
+    multiline: False
+    text: ''
+
+  GridLayout:
+    cols: 4
+    rows: 5
+    spacing: 10
+    padding: 10
+
+    Button:
+      text: '7'
+      on_press: app.botao_apertado(self.text)
+    Button:
+      text: '8'
+      on_press: app.botao_apertado(self.text)
+    Button:
+      text: '9'
+      on_press: app.botao_apertado(self.text)
+    Button:
+      text: '/'
+      on_press: app.operacao(self.text)
+
+    Button:
+      text: '4'
+      on_press: app.botao_apertado(self.text)
+    Button:
+      text: '5'
+      on_press: app.botao_apertado(self.text)
+    Button:
+      text: '6'
+      on_press: app.botao_apertado(self.text)
+    Button:
+      text: '*'
+      on_press: app.operacao(self.text)
+
+    Button:
+      text: '1'
+      on_press: app.botao_apertado(self.text)
+    Button:
+      text: '2'
+      on_press: app.botao_apertado(self.text)
+    Button:
+      text: '3'
+      on_press: app.botao_apertado(self.text)
+    Button:
+      text: '-'
+      on_press: app.operacao(self.text)
+
+    Button:
+      text: 'C'
+      on_press: app.limpar()
+    Button:
+      text: '0'
+      on_press: app.botao_apertado(self.text)
+    Button:
+      text: '='
+      on_press: app.calcular_resultado()
+    Button:
+      text: '+'
+      on_press: app.operacao(self.text)
