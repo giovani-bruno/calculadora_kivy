@@ -22,26 +22,34 @@ class MainApp(App):
       display = self.root.ids.display
       conta = display.text
       if '+' in conta:
-        operacao_index = conta.find('+')
-        primeiro_numero = conta[:operacao_index]
-        segundo_numero = conta[operacao_index + 1:]
-        resultado = int(primeiro_numero) + int(segundo_numero)
+        qtd = conta.count('+')
+        if qtd == 1:
+          operacao_index = conta.find('+')
+          primeiro_numero = conta[:operacao_index]
+          segundo_numero = conta[operacao_index + 1:]
+          resultado = float(primeiro_numero) + float(segundo_numero)
       elif '-' in conta:
-        operacao_index = conta.find('-')
-        primeiro_numero = conta[:operacao_index]
-        segundo_numero = conta[operacao_index + 1:]
-        resultado = int(primeiro_numero) - int(segundo_numero)
+        qtd = conta.count('-')
+        if qtd == 1:
+          operacao_index = conta.find('-')
+          primeiro_numero = conta[:operacao_index]
+          segundo_numero = conta[operacao_index + 1:]
+          resultado = float(primeiro_numero) - float(segundo_numero)
       elif '*' in conta:
-        operacao_index = conta.find('*')
-        primeiro_numero = conta[:operacao_index]
-        segundo_numero = conta[operacao_index + 1:]
-        resultado = int(primeiro_numero) * int(segundo_numero)
+        qtd = conta.count('*')
+        if qtd == 1:
+          operacao_index = conta.find('*')
+          primeiro_numero = conta[:operacao_index]
+          segundo_numero = conta[operacao_index + 1:]
+          resultado = float(primeiro_numero) * float(segundo_numero)
       elif '/' in conta:
-        operacao_index = conta.find('/')
-        primeiro_numero = conta[:operacao_index]
-        segundo_numero = conta[operacao_index + 1:]
-        resultado = int(primeiro_numero) / int(segundo_numero)
-      display.text = str(resultado)
+        qtd = conta.count('/')
+        if qtd == 1:
+          operacao_index = conta.find('/')
+          primeiro_numero = conta[:operacao_index]
+          segundo_numero = conta[operacao_index + 1:]
+          resultado = float(primeiro_numero) / float(segundo_numero)
+      display.text = str(int(resultado))
     except UnboundLocalError:
       pass
 
