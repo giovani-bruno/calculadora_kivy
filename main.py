@@ -2,19 +2,15 @@ from kivy.app import App
 from kivy.lang import Builder
 
 class MainApp(App):
+
+
   def build(self):
     return Builder.load_file("main.kv")
   
 
-  def botao_apertado(self, numero):
+  def botao_apertado(self, valor):
     display = self.root.ids.display
-    display.text += numero
-
-
-  def operacao(self, operacao):
-    self.operacao_selecionada = operacao
-    display = self.root.ids.display
-    display.text += operacao
+    display.text += valor
 
 
   def calcular_resultado(self):
@@ -22,33 +18,25 @@ class MainApp(App):
       display = self.root.ids.display
       conta = display.text
       if '+' in conta:
-        qtd = conta.count('+')
-        if qtd == 1:
-          operacao_index = conta.find('+')
-          primeiro_numero = conta[:operacao_index]
-          segundo_numero = conta[operacao_index + 1:]
-          resultado = float(primeiro_numero) + float(segundo_numero)
+        conta = conta.split("+")
+        resultado = 0
+        for numero in conta:
+          resultado += int(numero)
       elif '-' in conta:
-        qtd = conta.count('-')
-        if qtd == 1:
-          operacao_index = conta.find('-')
-          primeiro_numero = conta[:operacao_index]
-          segundo_numero = conta[operacao_index + 1:]
-          resultado = float(primeiro_numero) - float(segundo_numero)
+        conta = conta.split("-")
+        resultado = int(conta[0])
+        for i in range(1, len(conta)):
+          resultado -= int(conta[i])
       elif '*' in conta:
-        qtd = conta.count('*')
-        if qtd == 1:
-          operacao_index = conta.find('*')
-          primeiro_numero = conta[:operacao_index]
-          segundo_numero = conta[operacao_index + 1:]
-          resultado = float(primeiro_numero) * float(segundo_numero)
+        conta = conta.split("*")
+        resultado = int(conta[0])
+        for i in range(1, len(conta)):
+          resultado *= int(conta[i])
       elif '/' in conta:
-        qtd = conta.count('/')
-        if qtd == 1:
-          operacao_index = conta.find('/')
-          primeiro_numero = conta[:operacao_index]
-          segundo_numero = conta[operacao_index + 1:]
-          resultado = float(primeiro_numero) / float(segundo_numero)
+        conta = conta.split("/")
+        resultado = int(conta[0])
+        for i in range(1, len(conta)):
+          resultado /= int(conta[i])
       display.text = str(int(resultado))
     except UnboundLocalError:
       pass
