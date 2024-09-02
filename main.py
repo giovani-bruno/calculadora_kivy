@@ -1,8 +1,12 @@
 from kivy.app import App
 from kivy.lang import Builder
+from kivy.uix.image import Image
+from kivy.uix.behaviors import ButtonBehavior
+from kivy.app import App
+from kivy.lang import Builder
+
 
 class MainApp(App):
-
 
   def build(self):
     return Builder.load_file("main.kv")
@@ -17,27 +21,8 @@ class MainApp(App):
     try:
       display = self.root.ids.display
       conta = display.text
-      if '+' in conta:
-        conta = conta.split("+")
-        resultado = 0
-        for numero in conta:
-          resultado += int(numero)
-      elif '-' in conta:
-        conta = conta.split("-")
-        resultado = int(conta[0])
-        for i in range(1, len(conta)):
-          resultado -= int(conta[i])
-      elif '*' in conta:
-        conta = conta.split("*")
-        resultado = int(conta[0])
-        for i in range(1, len(conta)):
-          resultado *= int(conta[i])
-      elif '/' in conta:
-        conta = conta.split("/")
-        resultado = int(conta[0])
-        for i in range(1, len(conta)):
-          resultado /= int(conta[i])
-      display.text = str(int(resultado))
+      if conta:
+        display.text = str(eval(conta))
     except UnboundLocalError:
       pass
 
@@ -45,5 +30,9 @@ class MainApp(App):
   def limpar(self):
     display = self.root.ids.display
     display.text = ""
+
+
+class ImageButton(ButtonBehavior, Image):
+  pass
 
 MainApp().run()
