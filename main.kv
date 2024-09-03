@@ -25,53 +25,53 @@ BoxLayout:
     padding: 10
 
     ImageButton:
-      source: 'numeros/botao_7.png'
+      source: 'numeros/botao_7.png' if self.state == 'normal' else 'numeros_apertados/botao_7.png'
       on_press: app.botao_apertado('7')
     ImageButton:
-      source: 'numeros/botao_8.png'
+      source: 'numeros/botao_8.png' if self.state == 'normal' else 'numeros_apertados/botao_8.png'
       on_press: app.botao_apertado('8')
     ImageButton:
-      source: 'numeros/botao_9.png'
+      source: 'numeros/botao_9.png' if self.state == 'normal' else 'numeros_apertados/botao_9.png'
       on_press: app.botao_apertado('9')
     ImageButton:
-      source: 'operacoes/dividir.png'
+      source: 'operacoes/dividir.png' if self.state == 'normal' else 'operacoes_apertados/dividir.png'
       on_press: app.botao_apertado('/')
 
     ImageButton:
-      source: 'numeros/botao_4.png'
+      source: 'numeros/botao_4.png' if self.state == 'normal' else 'numeros_apertados/botao_4.png'
       on_press: app.botao_apertado('4')
     ImageButton:
-      source: 'numeros/botao_5.png'
+      source: 'numeros/botao_5.png' if self.state == 'normal' else 'numeros_apertados/botao_5.png'
       on_press: app.botao_apertado('5')
     ImageButton:
-      source: 'numeros/botao_6.png'
+      source: 'numeros/botao_6.png' if self.state == 'normal' else 'numeros_apertados/botao_6.png'
       on_press: app.botao_apertado('6')
     ImageButton:
-      source: 'operacoes/multiplicar.png'
+      source: 'operacoes/multiplicar.png' if self.state == 'normal' else 'operacoes_apertados/multiplicar.png'
       on_press: app.botao_apertado('*')
 
     ImageButton:
-      source: 'numeros/botao_1.png'
+      source: 'numeros/botao_1.png' if self.state == 'normal' else 'numeros_apertados/botao_1.png'
       on_press: app.botao_apertado('1')
     ImageButton:
-      source: 'numeros/botao_2.png'
+      source: 'numeros/botao_2.png' if self.state == 'normal' else 'numeros_apertados/botao_2.png'
       on_press: app.botao_apertado('2')
     ImageButton:
-      source: 'numeros/botao_3.png'
+      source: 'numeros/botao_3.png' if self.state == 'normal' else 'numeros_apertados/botao_3.png'
       on_press: app.botao_apertado('3')
     ImageButton:
-      source: 'operacoes/subtrair.png'
+      source: 'operacoes/subtrair.png' if self.state == 'normal' else 'operacoes_apertados/subtrair.png'
       on_press: app.botao_apertado('-')
 
     ImageButton:
-      source: 'operacoes/limpar.png'
+      source: 'operacoes/limpar.png' if self.state == 'normal' else 'operacoes_apertados/limpar.png'
       on_press: app.limpar()
     ImageButton:
-      source: 'numeros/botao_0.png'
+      source: 'numeros/botao_0.png' if self.state == 'normal' else 'numeros_apertados/botao_0.png'
       on_press: app.botao_apertado('0')
     ImageButton:
-      source: 'operacoes/calcular_resultado.png'
+      source: 'operacoes/calcular_resultado.png' if self.state == 'normal' else 'operacoes_apertados/calcular_resultado.png'
       on_press: app.calcular_resultado()
     ImageButton:
-      source: 'operacoes/somar.png'
+      source: 'operacoes/somar.png' if self.state == 'normal' else 'operacoes_apertados/somar.png'
       on_press: app.botao_apertado('+')
