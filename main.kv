@@ -14,9 +14,16 @@ BoxLayout:
     font_size: 32
     readonly: True
     halign: 'right'
-    valign: 'middle'
+    valign: 'bottom'
     multiline: False
     text: ''
+    canvas.before:
+      Color:
+        rgba: 1, 1, 1, 1
+      Rectangle:
+        size: self.size
+        pos: self.pos
+        source: 'Rectangle 1.png'
 
   GridLayout:
     cols: 4
@@ -48,7 +55,7 @@ BoxLayout:
       on_press: app.botao_apertado('6')
     ImageButton:
       source: 'operacoes/multiplicar.png' if self.state == 'normal' else 'operacoes_apertados/multiplicar.png'
-      on_press: app.botao_apertado('*')
+      on_press: app.botao_apertado('x')
 
     ImageButton:
       source: 'numeros/botao_1.png' if self.state == 'normal' else 'numeros_apertados/botao_1.png'
